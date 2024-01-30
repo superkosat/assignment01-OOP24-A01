@@ -1,9 +1,10 @@
 # Assignment Index
 
-1. [Getting Started](getting-started)
-2. [Task 1](#task-1)
-3. [Task 2](#task-2)
-4. [Task 3](#task-3)
+1. [Getting Started](#getting-started)
+2. [Task 1 - Linked List](#task-1---linked-list)
+3. [Task 2 - Stack](#task-2---stack)
+4. [Task 3 - Generic List](#task-3---generic-list)
+5. [Submission](#submission)
 
 ---
 
@@ -54,14 +55,24 @@
 - After every push, and before you make a new commit, do a pull on your repo. This is because whenever you do a push, the autograder runs and pushes some new commits to your repo.
 - If certain instructions are not clear, you can attend the Office Hour of the course tutor – Affan Khamse (ak10529@nyu.edu) for further clarity.
 
-## Task - 1: Linked List
+## Before You Start:
+- In "main.cpp," you have given different test cases that can help you test your code. Make sure that all of them run successfully when you run your code.
+- It is crucial to submit a working program (Non-working applications will not be considered).
+- For all three task ,your requried to work(make changes) ONLY one file per task:
+      - `list_todo.h`
+      - `stack_todo.h`
+      - `generic_list_todo.h`
+
+         
+ 
+## Task 1 - Linked List
 
 For this task, you have been given following files:
 
 - **list_tests.h**: Contains some required code (you should NOT modify this file)
 - **list_todo.h**: Will contain the code that you must fill.
 
-The aim of the code is to implement a dynamic linked list of int values. The struct of each node and the list is provided in the file `todo.h` as follows:
+The aim of the code is to implement a dynamic linked list of int values. The struct of each node and the list is provided in the file `list_todo.h` as follows:
 
 ```
 class Node {
@@ -105,7 +116,7 @@ You need to implement the code for the following methods in the file "todo.h":
 - `friend ostream& operator<<(ostream& os, List& l)`
   - A function to create an output stream from a list using the `operator <<` (this is mainly used to print the list using `cout <<`).
 
-In "main.cpp," you have given different test cases that can help you test your code. Make sure that all of them run successfully when you run your code.
+
 
 **Important Notes:**
 
@@ -120,7 +131,7 @@ For this task, you have been given following files:
 - **stack_tests.h**: Contains some required code (you should NOT modify this file)
 - **stack_todo.h**: Will contain the code that you must fill.
 
-The aim of the code is to implement a dynamic linked list of int values. The struct of each node and the list is provided in the file `todo.h` as follows:
+The aim of the code is to implement a dynamic linked list of int values. The struct of each node and the list is provided in the file `stack_todo.h` as follows:
 
 ```
 class Node {
@@ -166,12 +177,62 @@ You need to implement the code for the following methods in the file "todo.h":
 
 In "main.cpp," you have given different test cases that can help you test your code. Make sure that all of them run successfully when you run your code.
 
-**Important Notes:**
 
-- It is crucial to submit a working program (Non-working applications will not be considered).
-- You must work on one file ONLY ("stack_todo.h" that includes all your code).
 
-## Task 3
-<!-- Content for Task 3 goes here -->
+## Task 3 - Generic List
+In this exercise, you have three given files (attached to the assignment):
 
+- **tests.h**: Contains some required code (you should NOT modify this file)
+- **main.cpp**: Contains different test cases that you need to verify.
+- **todo.h**: Will contain the code that you must fill.
+
+The aim of the code is to implement a dynamic generic linked list of objects. The struct of each node and the list is provided in the file **todo.h** as follows:
+
+```cpp
+template <typename T>
+class Node {
+public:
+    T value;
+    Node* next;
+};
+
+template <typename T>
+class ArrayList {
+public:
+    Node<T>* head;
+    int size;
+};
+```
+
+You need to implement the code of the following methods (in the file “todo.h”):
+
+- `ArrayList()`
+  - Non-parameters constructor.
+
+- `ArrayList(ArrayList<T> v)`
+  - With-parameters constructor.
+
+- `ArrayList(ArrayList<T>& l)`
+  - A copy constructor.
+
+- `~ArrayList()`
+  - A destructor.
+
+- `void add(T v)`
+  - A method to add a new value to the end of the arraylist.
+
+- `T pop()`
+  - A method that returns the value that exists in the last node of the arraylist and removes this node.
+
+- `bool operator==(const ArrayList<T>& rhs)`
+  - A method to compare between two arraylists using == operator.
+
+- `bool operator!=(const ArrayList<T>& rhs)`
+  - A method to compare between two arraylists using != operator.
+
+- `friend ostream& operator<<(ostream& os, ArrayList<T>& l)`
+  - A function to create an output stream from an arraylist using `operator <<` (this is mainly used to print the arraylist using `cout<<`).
+
+# Submission
+- no worries your final pushed commit before due date will be considered for grading.
 
