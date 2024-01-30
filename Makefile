@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++11
 
-test_main: test_main.cpp
+test_main: main.cpp
 	$(CXX) $(CXXFLAGS) $^ -o test_main
 
 test: test_main
