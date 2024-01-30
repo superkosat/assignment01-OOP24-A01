@@ -1,17 +1,17 @@
 CXX = g++
 CXXFLAGS = -std=c++11
 
-test_ll: tests/list_tests.cpp src/list_todo.cpp
+test_ll: list_tests.cpp list_todo.cpp
 	$(CXX) $(CXXFLAGS) $^ -o test_runner
 	./test_runner
 	rm test_runner
 
-test_gll: tests/generic_list_tests.cpp src/generic_list_todo.cpp
+test_gll: generic_list_tests.cpp generic_list_todo.cpp
 	$(CXX) $(CXXFLAGS) $^ -o test_runner
 	./test_runner
 	rm test_runner
 
-test_stack: tests/stack_tests.cpp src/stack_todo.cpp
+test_stack: stack_tests.cpp stack_todo.cpp
 	$(CXX) $(CXXFLAGS) $^ -o test_runner
 	./test_runner
 	rm test_runner
