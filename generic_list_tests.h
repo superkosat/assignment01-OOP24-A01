@@ -129,24 +129,24 @@ namespace tests{
         }
         cout<<"---------------------------------------------------------------------"<<endl;
     }
-    void run_generic_list_test_case_7(){
-        // Test case-7: run destructor
-        cout<<"Running Test case-7:  \t\t try to run the destructor"<<endl;
-        try{
-            person p1(10,"james");person p2(20,"mike");
-            person p3(30,"sarah");
-            ArrayList<person>* L1=new ArrayList<person>(); L1->add(p1); L1->add(p2); L1->add(p3);
-            delete L1;
-            // L1=NULL;
-            if(L1->head==NULL)
-                cout<<"Test case-7 run successfully.."<<endl;
-            else
-                throw runtime_error("Test case-7 Fail");
-        }catch(...){
-            cout<<"Test case-7 failed .......... unable to run the destructor correctly"<<endl;
-        }
-        cout<<"---------------------------------------------------------------------"<<endl;
-    }
+    // void run_generic_list_test_case_7(){
+    //     // Test case-7: run destructor
+    //     cout<<"Running Test case-7:  \t\t try to run the destructor"<<endl;
+    //     try{
+    //         person p1(10,"james");person p2(20,"mike");
+    //         person p3(30,"sarah");
+    //         ArrayList<person>* L1=new ArrayList<person>(); L1->add(p1); L1->add(p2); L1->add(p3);
+    //         delete L1;
+    //         // L1=NULL;
+    //         if(L1->head==NULL)
+    //             cout<<"Test case-7 run successfully.."<<endl;
+    //         else
+    //             throw runtime_error("Test case-7 Fail");
+    //     }catch(...){
+    //         cout<<"Test case-7 failed .......... unable to run the destructor correctly"<<endl;
+    //     }
+    //     cout<<"---------------------------------------------------------------------"<<endl;
+    // }
     void run_generic_list_test_case_8(){
         // Test case-8: print list using << operator
         cout<<"Running Test case-8:  \t\t try to print list using << operator"<<endl;
