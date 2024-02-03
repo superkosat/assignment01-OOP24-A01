@@ -3,7 +3,7 @@
 echo "Running tests..."
 echo
 
-make test_list test_stack test_generic_list
+# make test_list test_stack test_generic_list
 
 # output=$(./test_list)
 
@@ -14,13 +14,13 @@ make test_list test_stack test_generic_list
 #   exit 1
 # fi
 
-if ./test_list | grep -q 'failed'; then
-  echo "Fail: List program did not exit zero"  
-  exit 1
-else
-  echo "Pass: List program exited zero"
+# if ./test_list | grep -q 'failed'; then
+#   echo "Fail: List program did not exit zero"  
+#   exit 1
+# else
+#   echo "Pass: List program exited zero"
   
-fi
+# fi
 
 
 # output=$(./test_stack)
@@ -31,12 +31,12 @@ fi
 #   exit 1
 # fi
  
-if ./test_stack | grep -q 'failed'; then
-  echo "Fail: Stack program did not exit zero"
-  exit 1
-else
-  echo "Pass: Stack program exited zero"
-fi
+# if ./test_stack | grep -q 'failed'; then
+#   echo "Fail: Stack program did not exit zero"
+#   exit 1
+# else
+#   echo "Pass: Stack program exited zero"
+# fi
 
 # output=$(./test_generic_list)
 # if [ $? -eq 0 ]; then
@@ -46,14 +46,47 @@ fi
 #   exit 1
 # fi
 
-if ./test_generic_list | grep -q 'failed'; then
-  echo "Fail: Generic program did not exit zero"
-  exit 1
+# if ./test_generic_list | grep -q 'failed'; then
+#   echo "Fail: Generic program did not exit zero"
+#   exit 1
+# else
+#   echo "Pass: Generic program exited zero"
+# fi
+
+
+if [ "$1" == "test_list" ]; then
+    make test_list
+    if ./test_list | grep -q 'failed'; then
+      echo "Fail: List program did not exit zero"  
+      exit 1
+    else
+      echo "Pass: List program exited zero"
+      
+    fi
+    exit $?
+elif [ "$1" == "test_stack" ]; then
+    make test_stack
+    if ./test_stack | grep -q 'failed'; then
+      echo "Fail: Stack program did not exit zero"
+      exit 1
+    else
+      echo "Pass: Stack program exited zero"
+    fi
+    exit $?
+elif [ "$1" == "test_generic_list" ]; then
+    make test_generic_list
+    if ./test_generic_list | grep -q 'failed'; then
+      echo "Fail: Generic program did not exit zero"
+      exit 1
+    else
+      echo "Pass: Generic program exited zero"
+    fi
+    exit $?
 else
-  echo "Pass: Generic program exited zero"
+    echo "Invalid test target. Usage: $0 <test_target>"
+    exit 1
 fi
 
-
-echo
-echo "All tests passed."
-exit 0
+# echo
+# echo "All tests passed."
+# exit 0
